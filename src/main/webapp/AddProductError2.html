@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/AddProduct.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script> 
+$(function(){
+  $("#header").load("AdminHeader.html"); 
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="active">
+	<div class="filler"></div>
+	<h2>Invalid Date format Enter Date Again</h2>
+		<form action="AddProduct.jsp" method="post" enctype='multipart/form-data'>
+			<div class="bigcard">
+				<div class="bigcard1">
+					<h3>Enter Product Name</h3><input type='text' name='prname' required>
+					<h3>Enter Product ID</h3><input type='text' name='prid' required>
+					<h3>Enter Manufacturer Name</h3><input type='text' name='mfname' required>
+				</div>
+  		    	<div class="bigcard2">
+   					 <h3>Price</h3><input type="text" name="price" onkeypress="return event.charCode>= 48 && event.charCode<= 57" required>
+   					 <h3>Product Image</h3><input type="file" name="photo" accept="image/*" >
+   					 <p></p>
+ 					 <input type="submit" value="Add">
+				</div>
+			</div>
+		</form>
+</div>
+</body>
+</html>

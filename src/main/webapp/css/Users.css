@@ -1,0 +1,93 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-image: url("b2g.png");
+	background-repeat: no-repeat;
+}
+
+.main{
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.container1{
+	width: 1000px;
+	height: 30px;
+	background-color: transparent;
+	margin: 0 auto;
+}
+
+.container2{
+	width: 1000px;
+	height: 30px;
+	background-color: transparent;
+	margin: 0 auto;
+}
+
+.active{
+	width:1000px;
+	min-height:688px;
+	background-color: white;
+	margin: 0 auto;
+	padding: 0px 20px 0px 20px;
+}
+
+.filler2{
+	width:100%;
+	height:75px;
+}
+
+.filler3{
+	width:100%;
+	height:20px;
+}
+
+.button a {
+  background-color:  #146c70;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button a:hover {
+  background-color:  #000404;
+  color: #fff; 
+}
+
+.action-btn a {
+  background-color:  #146c70;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.action-btn a:hover {
+  background-color:  #000404;
+  color: #fff; 
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+    border: 1px solid black;
+}
+th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  background-color: #0ca1a6;
+  color: white;
+}
+
+tr,td{
+	border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}

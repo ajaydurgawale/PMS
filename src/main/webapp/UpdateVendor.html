@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update</title>
+<link rel="stylesheet" href="css/Register.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script> 
+$(function(){
+  $("#header").load("AdminHeader.html"); 
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+	<form action="UpdateVendor.jsp" method="post">
+		<div class="container">
+			<div class="registerbox">
+				<h2>Update Vendor</h2>
+				<input type="text" name="uid" id="uid" readonly>
+				<input type="text" name="fname" placeholder="Enter First Name"required> 
+				<input type="text" name="lname" placeholder="Enter Last Name" required> 
+				<input type="text" name="email" placeholder="Enter Email ID" required> 
+				<input type="text" name="phno" placeholder="Enter Phone Number" onkeypress="return event.charCode>= 48 && event.charCode<= 57" required> 
+				<input type="text" name="address" placeholder="Enter Address" required> 
+				<input type="submit" value="Submit">
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+		var url_string = window.location.href;
+		var url = new URL(url_string);
+		document.getElementById('uid').value = url.searchParams.get("id");
+	</script>
+</body>
+</html>
