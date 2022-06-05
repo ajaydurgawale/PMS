@@ -35,6 +35,8 @@ CREATE TABLE `admin` (
   PRIMARY KEY (aid)
 );
 
+INSERT INTO `admin` (`aid`, `pass`, `fname`, `lname`, `email`, `address`, `phno`) VALUES ('admin', 'admin', 'admin', 'admin', 'admin@gmail.com', 'admin address', '7834927452'); 
+
 CREATE TABLE product (
   pid VARCHAR(15) NOT NULL,
   pname VARCHAR(20) DEFAULT NULL,
