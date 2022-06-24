@@ -15,7 +15,6 @@
 	String email1 = request.getParameter("email");
 	String phno1 = request.getParameter("phno");
 	String uid1 = request.getParameter("uid");
-	long phno2 = Long.parseLong(phno1);
 	String address1 = request.getParameter("address");
 
 	PreparedStatement ps2 = null;
@@ -31,7 +30,7 @@
 		ps2.setString(2, lname1);
 		ps2.setString(3, email1);
 		ps2.setString(4, address1);
-		ps2.setLong(5, phno2);
+		ps2.setString(5, phno1);
 		ps2.setString(6, uid1);
 		int i = ps2.executeUpdate();
 		response.sendRedirect("Customers.jsp");

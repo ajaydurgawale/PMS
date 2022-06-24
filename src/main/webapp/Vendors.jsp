@@ -52,7 +52,7 @@ $(function(){
   			<tr>
     			<td><%=rs.getString("sid") %></td>
     			<td><%=rs.getString("fname") %></td>
-    			<td><%=rs.getInt("phno") %></td>
+    			<td><%=rs.getString("phno") %></td>
     			<td><%=rs.getString("email") %></td>
     			<td>
 					<div class="action-btn">

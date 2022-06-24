@@ -13,9 +13,8 @@
 	String fname1 = request.getParameter("fname");
 	String lname1 = request.getParameter("lname");
 	String email1 = request.getParameter("email");
-	String phno1 = request.getParameter("phno");
+	String phno2 = request.getParameter("phno");
 	String uid1 = request.getParameter("uid");
-	long phno2 = Long.parseLong(phno1);
 	String address1 = request.getParameter("address");
 	String pass1 = request.getParameter("pass1");
 	String pass2 = request.getParameter("pass2");
@@ -57,7 +56,7 @@
 		ps2.setString(4, lname1);
 		ps2.setString(5, email1);
 		ps2.setString(6, address1);
-		ps2.setLong(7, phno2);
+		ps2.setString(7, phno2);
 		int i = ps2.executeUpdate();
 		response.sendRedirect("AdminHomepage.jsp");
 			} else

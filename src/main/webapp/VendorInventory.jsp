@@ -29,7 +29,7 @@ $(function(){
 		ResultSet rs=null;
 		PreparedStatement ps=null;
 		java.sql.Connection conn=null;
-		String query="select p.pid,i.quantity,p.pname,p.manufacturer,p.price from product p,inventory i where p.pid=i.pid and i.sid=?";
+		String query="select p.pid,p.image,i.quantity,p.pname,p.manufacturer,p.price from product p,inventory i where p.pid=i.pid and i.sid=?";
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase","root","1234");
