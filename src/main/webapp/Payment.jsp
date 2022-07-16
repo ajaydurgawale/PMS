@@ -27,19 +27,19 @@
 			<%=totalAmount%>
 		</p>
 		<div class="button">
-			<a href="CreditPayment.jsp">Credit Card</a>
+			<a href="CreditPayment.jsp?amt=<%= totalAmount %>">Credit Card</a>
 		</div>
 		<br>
 		<div class="button">
-			<a href="DebitPayment.jsp">Debit Card</a>
+			<a href="DebitPayment.jsp?amt=<%= totalAmount %>">Debit Card</a>
 		</div>
 		<br>
 		<div class="button">
-			<a href="GpayPayment.jsp">Google Pay</a>
+			<a href="GpayPayment.jsp?amt=<%= totalAmount %>">Google Pay</a>
 		</div>
 		<br>
 		<div class="button">
-			<a href="PhonePePayment.jsp">PhonePe</a>
+			<a href="PhonePePayment.jsp?amt=<%= totalAmount %>">PhonePe</a>
 		</div>
 	</div>
 </body>

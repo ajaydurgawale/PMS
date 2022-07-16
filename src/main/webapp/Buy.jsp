@@ -25,14 +25,23 @@ $(function(){
     %>
     
     <div class="filler"></div>
-    
+    <form>
+    <input type="text" name="pname">
+    <input type="submit" value="Search">
+    </form>
     <%
     int flag=0;
 	ResultSet rs=null;
 	PreparedStatement ps=null;
 	java.sql.Connection conn=null;
-	String query="SELECT p.pname,p.pid,p.manufacturer,p.price,p.image,SUM(i.quantity) AS quantity FROM product p,inventory i WHERE p.pid=i.pid GROUP BY p.pid";
 	
+	String name = request.getParameter("pname");
+	String query;
+	if(name != null && name.length() > 0){
+		query="SELECT p.pname,p.pid,p.manufacturer,p.price,p.image,SUM(i.quantity) AS quantity FROM product p,inventory i WHERE p.pid=i.pid AND p.name LIKE '%" + name + "%' GROUP BY p.pid";
+	}else{
+		query="SELECT p.pname,p.pid,p.manufacturer,p.price,p.image,SUM(i.quantity) AS quantity FROM product p,inventory i WHERE p.pid=i.pid GROUP BY p.pid";
+	}
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
 		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase","root","1234");

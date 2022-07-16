@@ -77,6 +77,7 @@ $(function(){
 				</td>
 				<td>
 					<div class="action-btn">
+						<a href="RestockProduct.jsp?id=<%=rs.getString("pid") %>">Add Stock</a>
 					    <a href="AddProductVendor.jsp?id=<%=rs.getString("pid") %>">Add Vendor</a>
 						<a href="UpdateProduct.html?id=<%=rs.getString("pid") %>">Edit</a>
 						<a href="DeleteProduct.jsp?id=<%=rs.getString("pid") %>">Delete</a>

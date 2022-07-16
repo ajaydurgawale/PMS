@@ -4,30 +4,29 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Product</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>
 	<%
-	String mfg = request.getParameter("mfg");
-	String price = request.getParameter("price");
-	String uid1 = request.getParameter("uid");
+	String pid = request.getParameter("pid");
+	String qty = request.getParameter("qty");
+	String sid = request.getParameter("sid");
 
-
-	PreparedStatement ps2 = null;
+	PreparedStatement ps1 = null;
 	Connection conn = null;
 	ResultSet rs = null;
-	String query1 = "UPDATE product SET manufacturer=?,price=? WHERE pid=?";
-
+	String query1 = "UPDATE inventory SET restockqty=? where pid=? and sid=?";
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase", "root", "1234");
-		ps2 = conn.prepareStatement(query1);
-		ps2.setString(1, mfg);
-		ps2.setString(2, price);
-		ps2.setString(3, uid1);
-		int i = ps2.executeUpdate();
+		ps1 = conn.prepareStatement(query1);
+		ps1.setString(1, qty);
+		ps1.setString(2, pid);
+		ps1.setString(3, sid);
+		ps1.executeUpdate();
+
 		response.sendRedirect("ManageProducts.jsp");
 	} catch (Exception e) {
 		out.println(e);
@@ -39,17 +38,10 @@
 		}
 		;
 		try {
-			if (ps2 != null)
-		ps2.close();
+			if (ps1 != null)
+		ps1.close();
 		} catch (Exception e) {
 		}
-		;
-		try {
-			if (conn != null)
-		conn.close();
-		} catch (Exception e) {
-		}
-		;
 	}
 	%>
 </body>
